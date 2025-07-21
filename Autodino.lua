@@ -58,7 +58,7 @@ local function sendWebhook(qty)
     local waitLeft = WEBHOOK_DELAY - (now - lastWebhook)
     if waitLeft > 0 then task.wait(waitLeft) end
     lastWebhook = tick()
-    local data = {embeds={{title="🎉 Egg Crafted",color=65280,fields={{name="Egg",value=EggType,inline=false},{name="Quantity",value=tostring(qty or 0),inline=false}},footer={text="Made with ❤️ by Nagi | "..os.date("!%X UTC")}}}}
+    local data = {embeds={{title="🎉 Egg Crafted",color=65280,fields={{name="Egg",value=EggType,inline=false},{name="Quantity",value=tostring(qty or 0),inline=false}},footer={text="Made by: 100b | "..os.date("!%X UTC")}}}}
     local body = HttpService:JSONEncode(data)
     pcall(function()
         if syn and syn.request then
